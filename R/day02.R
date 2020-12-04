@@ -54,10 +54,8 @@ criterion <- str_extract(x, "^.*(?=\\:)")
 letter <- str_extract(criterion, "[a-z]")
 first_position <- as.integer(str_extract(criterion, "[0-9]+(?=-)"))
 second_position <- as.integer(str_extract(criterion, "(?<=-)[0-9]+"))
-# I will test both conditions using a regex: 
 first_condition_regex <- paste0("^.{", first_position - 1L, "}", letter)
 second_condition_regex <- paste0("^.{", second_position - 1L, "}", letter)
 first_condition <- str_detect(password, first_condition_regex)
 second_condition <- str_detect(password, second_condition_regex)
-# result
 sum(xor(first_condition, second_condition))
