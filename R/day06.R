@@ -59,4 +59,3 @@ input_clean <- input[-which(blank_lines)]
 input_list <- split(input_clean, group_id)
 
 sum(vapply(input_list, my_count_commond_answers, integer(1)))
-
